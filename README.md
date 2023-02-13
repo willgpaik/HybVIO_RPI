@@ -12,8 +12,7 @@ Command to run HybVIO executable is replaced with
 from original command (`main`).
 
 ## Original README document and no need to follow the steps if installing on Raspberry Pi
-### Go to "Benchmarking and the `hybvio` binary" section
-
+### ![Go to "Benchmarking and the `hybvio` binary" section](https://github.com/willgpaik/HybVIO_RPI/blob/main/README.md#benchmarking-and-the-hybvio-binary)
 
 **A visual-inertial odometry system with an optional SLAM module**.
 
