@@ -1,5 +1,15 @@
 # HybVIO
 
+## NOTE: In order to install it on Raspberry Pi, follow the instruction below:
+```
+mkdir -p ~/sw
+cd ~/sw
+git clone https://github.com/willgpaik/HybVIO_RPI.git --recursive
+sudo bash rpi_install.sh
+```
+## Original README document and no need to follow the steps if installing on Raspberry Pi
+
+
 **A visual-inertial odometry system with an optional SLAM module**.
 
 This is a research-oriented codebase, which has been published for the purposes of verifiability and reproducibility of the results in the paper:
