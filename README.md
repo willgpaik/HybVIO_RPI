@@ -7,7 +7,12 @@ cd ~/sw
 git clone https://github.com/willgpaik/HybVIO_RPI.git --recursive
 sudo bash rpi_install.sh
 ```
+Command to run HybVIO executable is replaced with 
+`hybvio`
+from original command (`main`).
+
 ## Original README document and no need to follow the steps if installing on Raspberry Pi
+### Go to "Benchmarking and the `hybvio` binary" section
 
 
 **A visual-inertial odometry system with an optional SLAM module**.
@@ -77,20 +82,20 @@ On Debian Stretch, had to install (some might be optional): clang, libc++-dev, l
 
 On Raspbian (Pi 4, 8 GiB), had to install at least: libglfw3-dev and libglfw3 (for accelerated arrays) and libglew-dev and libxkbcommon-dev (for Pangolin, still had problems). Also started off with the Debian setup above.
 
-## Benchmarking and the `main` binary
+## Benchmarking and the `hybvio` binary
 
 To run benchmarks on EuRoC, TUM and SenseTime datasets and reproduce numbers published in https://arxiv.org/abs/2106.11857, please follow the instructions in https://github.com/AaltoML/vio_benchmark/tree/main/hybvio_runner.
 
-If you want to test the software on individual datasets, e.g. to see various real-time visualizations, you can use the `main` binary. For example to run an EuRoC dataset, you can do the following:
+If you want to test the software on individual datasets, e.g. to see various real-time visualizations, you can use the `main` binary with `hybvio` alias. For example to run an EuRoC dataset, you can do the following:
 
  1. In [`vio_benchmark`](https://github.com/AaltoML/vio_benchmark) root folder, run `python convert/euroc_to_benchmark.py` to download and convert the EuRoC data
  2. Symlink that data here: `mkdir -p data && cd data && ln -s /path/to/vio_benchmark/data/benchmark .`
 
-Then inside the `target/` folder use, e.g.:
+Then use, e.g.:
 
-    ./main -i=../data/benchmark/euroc-v1-02-medium -p -useStereo
+    hybvio -i=../data/benchmark/euroc-v1-02-medium -p -useStereo
 
-In general, to run the algorithm on recorded data, use `./main -i=path/to/datafolder`, where `datafolder/` must at the very least contain a `data.{jsonl|csv}`, `data.{mp4|mov|avi}`, and `parameters.txt` (sensor data, camera data, and camera calibration). Read about the formats [here](https://github.com/AaltoML/vio_benchmark/tree/98559272f59af35bb88bd63cc5cfc16e82a99bb3#benchmark-data-format). Such recordings can be created with
+In general, to run the algorithm on recorded data, use `hybvio -i=path/to/datafolder`, where `datafolder/` must at the very least contain a `data.{jsonl|csv}`, `data.{mp4|mov|avi}`, and `parameters.txt` (sensor data, camera data, and camera calibration). Read about the formats [here](https://github.com/AaltoML/vio_benchmark/tree/98559272f59af35bb88bd63cc5cfc16e82a99bb3#benchmark-data-format). Such recordings can be created with
 
  * [Android VIO tester](https://github.com/AaltoML/android-viotester)
  * [realsense-capture](https://github.com/AaltoVision/realsense-capture)
