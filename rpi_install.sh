@@ -57,7 +57,7 @@ cd $TMPROOT
 CC=clang CXX=clang++ ./src/slam/download_orb_vocab.sh
 mkdir -p target
 cd target
-CC=clang CXX=clang++ cmake -DBUILD_VISUALIZATIONS=ON -DUSE_SLAM=ON ..
+CC=clang CXX=clang++ cmake -DBUILD_VISUALIZATIONS=ON -DUSE_SLAM=ON -DOpenGL_GL_PREFERENCE=GLVN ..
 make -j4
 
 cd $TMPROOT
