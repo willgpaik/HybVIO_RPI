@@ -32,8 +32,9 @@ sudo apt install -y \
 	libavresample-dev \
 	libopengl-dev \
 	python3-dev \
-	python3-distutils
-
+	python3-distutils \
+  python3-matplotlib
+  
 # Install cmake 3.25.2
 wget -nc https://github.com/Kitware/CMake/releases/download/v3.25.2/cmake-3.25.2.tar.gz
 tar -xf cmake-3.25.2.tar.gz
