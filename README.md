@@ -1,6 +1,6 @@
 # HybVIO
 
-## NOTE: In order to install it on Raspberry Pi, follow the instruction below:
+## NOTE: In order to install it on Raspberry Pi (or Debian based OS on any device), follow the instruction below:
 ```
 mkdir -p ~/sw
 cd ~/sw
