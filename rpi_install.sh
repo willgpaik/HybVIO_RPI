@@ -4,6 +4,8 @@
 # on raspberry pi
 
 export TMPROOT=$PWD
+export USRNAME=$(pwd | cut -d '/' -f 3)
+
 
 # Download all submodules
 git submodule update --init --recursive
@@ -61,4 +63,4 @@ make -j4
 ./target/run-tests
 
 # Creating alias for HybVIO
-alias hybvio="$PWD/main"
+echo "alias hybvio="$PWD/target/main"" >> /home/$USRNAME/.bashrc
