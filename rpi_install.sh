@@ -5,9 +5,12 @@
 
 export TMPROOT=$PWD
 
-# Create install directory
-mkdir -p ~/sw/
-cd ~/sw
+# Download all submodules
+git submodule update --init --recursive
+
+# Create tmp directory
+mkdir -p ~/tmp
+cd ~/tmp
 
 # Install dependencies
 sudo apt update
@@ -37,8 +40,7 @@ cd cmake-3.25.2
 make -j 4
 sudo make install
 
-cd ~/sw
-rm -rf cmake*
+rm -rf ~/tmp
 
 cd $TMPROOT/3rdparty/mobile-cv-suite
 if [[ $(uname -m | grep arm) ]]; then
@@ -46,10 +48,11 @@ if [[ $(uname -m | grep arm) ]]; then
 	sed -i s/HASWELL/CORTEX$CPUTYPE/g ./scripts/components/openblas.sh
 fi
 
+
 CC=clang CXX=clang++ ./scripts/build.sh
 cd $TMPROOT
 CC=clang CXX=clang++ ./src/slam/download_orb_vocab.sh
-mkdir target
+mkdir -p target
 cd target
 CC=clang CXX=clang++ cmake -DBUILD_VISUALIZATIONS=ON -DUSE_SLAM=ON ..
 make -j4
