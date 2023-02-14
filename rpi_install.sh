@@ -60,6 +60,9 @@ cd target
 CC=clang CXX=clang++ cmake -DBUILD_VISUALIZATIONS=ON -DUSE_SLAM=ON ..
 make -j4
 
+cd $TMPROOT
+sudo chown -R $USRNAME:$USRNAME .
+
 # Run test
 ./target/run-tests
 
