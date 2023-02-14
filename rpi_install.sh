@@ -58,7 +58,7 @@ CC=clang CXX=clang++ cmake -DBUILD_VISUALIZATIONS=ON -DUSE_SLAM=ON ..
 make -j4
 
 # Run test
-target/run-tests
+./target/run-tests
 
 # Creating alias for HybVIO
 alias hybvio="$PWD/main"
